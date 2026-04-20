@@ -47,6 +47,7 @@ public class WarehouseManager {
 					if (bagArray[j] == intputNum) {
 						loopFlag = true;
 						break;
+						//あかかｋ
 					}
 
 				}
