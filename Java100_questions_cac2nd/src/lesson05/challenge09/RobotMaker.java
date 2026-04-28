@@ -55,54 +55,56 @@ import java.io.InputStreamReader;
 //ここに問題8で作成したクラス(変更なし)を記述してください。
 class Robot {
 	int energy;
-	int water;
 	String name;
+	int water;
 
 	void pumpWater() {
-		System.out.println("水を" + water + "リットル出します。\n");
+		//randomWater();削除
+
+		System.out.println("水を" + water + "リットル出します");
 	}
 
 	void randomWater() {
-		water = (int) (Math.random() * 10) % 9 + 1;
+		water = (int) (Math.random() * 9) + 1;
 	}
 
 	void setWater(int water) {
+		//フィールドの変数waterにメソッドの引数として受け取ったwaterを代入している
+		//「this.」はフィールドを明示するため
 		this.water = water;
 	}
 
-	void makeOmelet(int eggNum, int butterNum) {
-		int bestOmeletNum1 = eggNum / 2;
-		int bestOmeletNum2 = butterNum / 5;
+	void makeOmlet(int eggNum, int butterNum) {
+		int bestOmletNum1 = eggNum / 2;
+		int bestOmletNum2 = butterNum / 5;
 
-		if (bestOmeletNum1 > bestOmeletNum2) {
-			System.out.println("\n" + bestOmeletNum2 + "人分のオムレツを作成しました。\n");
+		if (bestOmletNum1 > bestOmletNum2) {
+			System.out.println(bestOmletNum2 + "人分のオムレツを作成しました。");
 		} else {
-			System.out.println("\n" + bestOmeletNum1 + "人分のオムレツを作成しました。\n");
+			System.out.println(bestOmletNum1 + "人分のオムレツを作成しました。");
 		}
+
 	}
 
 	int getWater() {
+		//int型の変数waterを返しているから
+		//void型で値を返してはいけない
 		return water;
 	}
 
 	String makeEggDishes(int flourNum, int sugarNum, int eggNum, int butterNum) {
-		int flour = flourNum - 170;
-		int sugar = sugarNum - 50;
-		int egg = eggNum - 2;
-		int butter = butterNum - 80;
-
-		String menu = null;
-		if ((flour >= 0) && (sugar >= 0) && (egg >= -1) && (butter >= 0)) {
-			menu = "クッキー";
-		} else if ((egg >= 0) && (butter >= -75)) {
-			menu = "オムレツ";
-		} else if (egg >= -1) {
-			menu = "ゆで卵";
+		if (flourNum >= 170 && sugarNum >= 50 && eggNum >= 1 && butterNum >= 80) {
+			return "クッキー";
+		} else if (eggNum >= 2 && butterNum >= 5) {
+			return "オムレツ";
+		} else if (eggNum > 0) {
+			return "ゆで卵";
 		} else {
-			menu = null;
+			return null;
 		}
-		return menu;
+
 	}
+
 }
 
 //ここに次の条件を満たすクラスを作成してください。
