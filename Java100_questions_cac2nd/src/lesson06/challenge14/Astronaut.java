@@ -44,7 +44,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//ここにSpaceshipクラスを記述する
+//ここにSpaceshipクラスを記述する//
 class Spaceship {
 	private double fuel;
 
