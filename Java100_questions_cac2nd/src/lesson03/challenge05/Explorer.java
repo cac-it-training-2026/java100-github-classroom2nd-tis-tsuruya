@@ -49,32 +49,34 @@ import java.io.InputStreamReader;
 
 public class Explorer {
 
-        public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-                System.out.println("隊長：");
-                System.out.println("崖発見！\n");
+		System.out.println("隊長：");
+		System.out.println("崖発見！\n");
 
-                int fullHeight = 30;
-                int totalLength = 0;
-                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int fullHeight = 30;
+		int totalLength = 0;
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-                //ここに do{ を記述する。
+		//ここに do{ を記述する。
+		do {
 
-                        System.out.print("何メートルのロープを投げますか？（5～8）＞");
-                        String lengthStr = br.readLine();
-                        int length = Integer.parseInt(lengthStr);
+			System.out.print("何メートルのロープを投げますか？（5～8）＞");
+			String lengthStr = br.readLine();
+			int length = Integer.parseInt(lengthStr);
 
-                        System.out.println("\n隊長：");
-                        if(5 <= length && length <= 8){
-                                totalLength += length;
-                                System.out.println(totalLength + "m登ったよ\n");
-                        } else{
-                                System.out.println("ロープの長さを間違ってるよ\n");
-                        }
+			System.out.println("\n隊長：");
+			if (5 <= length && length <= 8) {//入力された値が5~8の場合
+				totalLength += length;//登った距離に入力値を加算
+				System.out.println(totalLength + "m登ったよ\n");
+			} else {
+				System.out.println("ロープの長さを間違ってるよ\n");
+			}
 
-                ///ここにwhile文を記述する。
+			///ここにwhile文を記述する。
+		} while (fullHeight > totalLength);//登った距離が崖の高さ３０ｍ未満なら繰り返す
 
-                System.out.println("登り切ったよ！");
+		System.out.println("登り切ったよ！");
 
-        }
+	}
 }

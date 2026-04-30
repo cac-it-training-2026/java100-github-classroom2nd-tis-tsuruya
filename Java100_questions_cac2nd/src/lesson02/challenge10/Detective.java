@@ -87,7 +87,10 @@ public class Detective {
 		int num = Integer.parseInt(numStr);
 
 		//ここに記述する
-
+		String answer = (num == 1) ? "不正解です。" : "正解です。";
+		//条件演算子　（条件式） ? 値1 : 値2　真なら値１
+		System.out.println("\n探偵：");
+		System.out.println(answer);
 	}
 
 }
