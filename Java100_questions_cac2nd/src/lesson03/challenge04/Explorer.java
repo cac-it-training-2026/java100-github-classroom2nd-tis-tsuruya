@@ -86,3 +86,4 @@ public class Explorer {
 		System.out.println("全員渡り終わったよ！");
 
 	}
+}
